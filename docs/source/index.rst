@@ -75,7 +75,7 @@ Why is this faster?
 
 This is a very good case for autodask because we can dramatically reduce the
 amount of work we are doing. In the normal function and ``dask.delayed`` cases
-we will fall ``f(a, b)`` twice, and then add those together. In the ``autodask``
+we will call ``f(a, b)`` twice, and then add those together. In the ``autodask``
 case will will just directly execute ``a + b`` once, and then add that to
 itself. We have totally removed ``f`` from the graph, and instead just use ``+``
 directly.
